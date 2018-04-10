@@ -54,7 +54,11 @@ function isIntNum(val){
 }
 
 while(true) {
-  const number = readlineSync.question('请输入数字(Ctrl + C 结束): > ');
+  const number = readlineSync.question('请输入数字 (Ctrl + C或输入exit并回车结束): > ');
+
+  if (number === 'exit') {
+    process.exit();
+  }
   if (isIntNum(number)) {
     const Number2Lcd = new Num2LCD(number);
     Number2Lcd.display();
