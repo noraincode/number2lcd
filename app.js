@@ -19,18 +19,18 @@ class Num2LCD {
   }
 
   display() {
-		let result = numberMap[this.number[0]];
+    let result = numberMap[this.number[0]];
 
-		for (let i = 1; i < this.number.length ; i++) {
+    for (let i = 1; i < this.number.length ; i++) {
       result = this.mergeNumber(result, numberMap[this.number[i]]);
     }
 
     console.log("\n" + result.join("\n") + "\n");
 
     return result;
-	}
+  }
 
-	mergeNumber(m0, m1) {
+  mergeNumber(m0, m1) {
     return [
       m0[0]+ " " + m1[0],
       m0[1]+ " " + m1[1],
