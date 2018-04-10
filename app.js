@@ -1,8 +1,8 @@
 const readlineSync = require('readline-sync');
 
-const mapNumberPattern = {
+const numberMap = {
 	"0": [" -- ", "|  |", "|  |", "    ", "|  |", "|  |", " -- "],
-	"1": [ ' ', '|', '|', ' ', '|', '|', ' ' ],
+	"1": ["    ", "   |", "   |", "    ", "   |", "   |", "    "],
 	"2": [" -- ", "   |", "   |", " -- ", "|   ", "|   ", " -- "],
 	"3": [" -- ", "   |", "   |", " -- ", "   |", "   |", " -- "],
 	"4": ["    ", "|  |", "|  |", " -- ", "   |", "   |", "    "],
@@ -19,10 +19,10 @@ class Num2LCD {
   }
 
 	display() {
-		let result = mapNumberPattern[this.number[0]];
+		let result = numberMap[this.number[0]];
 
 		for (let i = 1; i < this.number.length ; i++) {
-      result = this.mergeNumber(result, mapNumberPattern[this.number[i]]);
+      result = this.mergeNumber(result, numberMap[this.number[i]]);
     }
 
     console.log("\n" + result.join("\n") + "\n");
