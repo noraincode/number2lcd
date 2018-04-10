@@ -14,11 +14,11 @@ const numberMap = {
 };
 
 class Num2LCD {
-	constructor(num) {
+  constructor(num) {
     this.number = num.toString();
   }
 
-	display() {
+  display() {
 		let result = numberMap[this.number[0]];
 
 		for (let i = 1; i < this.number.length ; i++) {
